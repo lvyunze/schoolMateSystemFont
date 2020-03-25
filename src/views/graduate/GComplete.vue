@@ -1,0 +1,16 @@
+<template>
+  <div>
+    <v-complete></v-complete>
+    <div style="margin-top: 10%;">
+      <van-button type="info" size="large">返回通讯录页面</van-button>
+    </div>
+  </div>
+</template>
+<script>
+import complete from '../../components/complete'
+export default {
+  components: {
+    'v-complete': complete
+  }
+}
+</script>
