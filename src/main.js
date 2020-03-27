@@ -37,7 +37,10 @@ import {
   Tab,
   Tabs,
   PullRefresh,
-  Sticky
+  Sticky,
+  Switch,
+  Form
+
 } from 'vant'
 
 Vue.use(Button)
@@ -66,6 +69,9 @@ Vue.use(Button)
   .use(Tabs)
   .use(PullRefresh)
   .use(Sticky)
+  .use(Switch)
+  .use(Form)
+
 // .use(VWechatAuth)
 Vue.config.productionTip = false
 // wechatAuth: new VWechatAuth(config)
