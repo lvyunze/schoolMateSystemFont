@@ -39,7 +39,11 @@ import {
   PullRefresh,
   Sticky,
   Switch,
-  Form
+  Form,
+  Radio,
+  RadioGroup,
+  Calendar,
+  DatetimePicker
 
 } from 'vant'
 
@@ -71,6 +75,10 @@ Vue.use(Button)
   .use(Sticky)
   .use(Switch)
   .use(Form)
+  .use(RadioGroup)
+  .use(Radio)
+  .use(Calendar)
+  .use(DatetimePicker)
 
 // .use(VWechatAuth)
 Vue.config.productionTip = false
