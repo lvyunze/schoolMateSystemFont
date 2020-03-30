@@ -43,7 +43,8 @@ import {
   Radio,
   RadioGroup,
   Calendar,
-  DatetimePicker
+  DatetimePicker,
+  Image
 
 } from 'vant'
 
@@ -79,6 +80,7 @@ Vue.use(Button)
   .use(Radio)
   .use(Calendar)
   .use(DatetimePicker)
+  .use(Image)
 
 // .use(VWechatAuth)
 Vue.config.productionTip = false
