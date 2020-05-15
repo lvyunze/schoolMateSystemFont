@@ -8,7 +8,7 @@ import createLogger from 'vuex/dist/logger'
 
 // import api from '../api'
 import api from '../api'
-const { scholarContactGet, getUserInfo } = api
+const { scholarContactGet, getUserInfo} = api
 
 Vue.use(Vuex)
 
@@ -29,6 +29,7 @@ export default new Vuex.Store({
     userInfo: null,
     scholarGroup: null,
     scholarContact: null
+
   },
   getters: {
     userInfo: state => state.userInfo,
@@ -102,7 +103,9 @@ export default new Vuex.Store({
           reject(error)
         }
       })
-    }
+    },
+
+
   },
   strict: debug,
   plugins: debug ? [createLogger(), createPersisted] : [createPersisted]

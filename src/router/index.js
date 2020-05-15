@@ -51,12 +51,52 @@ const routes = [
       title: '完成注册'
     }
   },
-  {
+    {
     path: '/StContacts',
     name: 'StContacts',
     component: StContacts,
+    children: [
+      // 子路由中的默认路由
+      {
+        path: '',
+        name: 'Default',
+        meta: {
+          title: '通讯录'
+        },
+        component: () => import('@/views/staff/contacts/contacts_list'),
+        children: [
+          {
+            path: '',
+            name: 'Default',
+            meta: {
+              title: '通讯录'
+            },
+            component: () =>
+              import('@/views/staff/contacts/contact_detail/scholar_before')
+          }
+          
+        ]
+      },
+      {
+        path: 'personal_set',
+        name: 'personal_set',
+        meta: {
+          title: '个人设置'
+        },
+        component: () => import('@/views/staff/contacts/personal_set')
+      }
+    ],
     meta: {
       title: '通讯录'
+    }
+  },
+  {
+    path: '/staffInfoDetail',  //这里scholar改成了staff了
+    name: 'staffInfoDetail',
+    component: () =>
+      import('@/views/staff/contacts/contact_detail/infoDetail'),
+    meta: {
+      title: '详细信息'
     }
   },
   {
@@ -167,10 +207,49 @@ const routes = [
     path: '/GContacts',
     name: 'GContacts',
     component: GContacts,
+    children: [
+      // 子路由中的默认路由
+      {
+        path: '',
+        name: 'Default',
+        meta: {
+          title: '通讯录'
+        },
+        component: () => import('@/views/graduate/contacts/contacts_list'),
+        children: [
+          {
+            path: '',
+            name: 'Default',
+            meta: {
+              title: '通讯录'
+            },
+            component: () =>
+              import('@/views/graduate/contacts/contact_detail/scholar_before')
+          }
+          
+        ]
+      },
+      {
+        path: 'personal_set',
+        name: 'personal_set',
+        meta: {
+          title: '个人设置'
+        },
+        component: () => import('@/views/graduate/contacts/personal_set')
+      }
+    ],
     meta: {
       title: '通讯录'
     }
   }
+  // {
+  //   path: '/GComplete/:pid',
+  //   name: 'GComplete',
+  //   component: GComplete,
+  //   meta: {
+  //     title: '详情页'
+  //   }
+  // }
 ]
 
 const router = new VueRouter({

@@ -2,7 +2,9 @@
   <div>
     <v-complete></v-complete>
     <div style="margin-top: 10%;">
-      <van-button type="info" size="large">返回通讯录页面</van-button>
+      <router-link to="/GContacts">
+        <van-button type="info" size="large">返回通讯录页面</van-button>
+      </router-link>
     </div>
   </div>
 </template>

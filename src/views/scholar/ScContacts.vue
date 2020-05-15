@@ -1,5 +1,7 @@
 <template>
   <div>
+    <!-- 路由出口 -->
+    <!-- 路由匹配到的组件将渲染在这里 -->
     <router-view></router-view>
     <van-tabbar v-model="active">
       <van-tabbar-item>
@@ -11,6 +13,7 @@
   </div>
 </template>
 <script>
+	//console.log(axios);
 export default {
   data() {
     return {
@@ -45,6 +48,6 @@ export default {
         this.$store.dispatch('scholarContactGet')
       }
     }
+  },
   }
-}
 </script>

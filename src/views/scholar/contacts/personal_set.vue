@@ -66,7 +66,7 @@
         </van-button>
       </div>
     </van-form>
-
+<!-- //scholar/contacts/personal_set.vue -->
   </div>
 </template>
 <script>
@@ -109,7 +109,16 @@
     },
     methods: {
       onSubmit(values) {
-        console.log('submit', values);
+          // let jsonData = {
+          //   userName:this.name,
+          //   userSex:this.sex,
+          //   userEmail:this.email
+          // };
+          // this.&axios.post("",jsonData).then(res=>{
+          //   console.log('成功提交');
+          // })
+        console.log('你好', values);
+        // console.log('性别', this.sex);
       },
       formatDate(date) {
         return `${date.getYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
@@ -118,16 +127,6 @@
         this.show = false;
         this.date = this.formatDate(date);
       },
-      // submit() {
-      //   console.log("你好");
-      //   var regEmail = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/
-      //   if (this.email != '' && !regEmail.test(this.email)) {
-
-      //     this.email = ''
-      //   }
-
-      // }
-
     }
   }
 </script>

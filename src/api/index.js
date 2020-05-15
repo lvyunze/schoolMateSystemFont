@@ -40,6 +40,7 @@ export default {
       params: params
     })
   },
+
   // 获取曾在院学习的id和姓名
   scholarContactGet(params) {
     return axios.get(`/scholar_contact_get`, {
@@ -50,5 +51,15 @@ export default {
     return axios.get(`/teacher_contact_get`, {
       params: params
     })
+  },
+  //获取教职工通讯录
+  staffContactGet(params) {
+    return axios.get(`/staff_contact_get`, {
+      params: params
+    })
   }
+
+
+
+
 }

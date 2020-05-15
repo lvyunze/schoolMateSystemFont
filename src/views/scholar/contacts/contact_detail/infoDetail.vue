@@ -28,11 +28,14 @@
 </template>
 
 <script>
+ import axios from 'axios'
 export default {
+  name:'scholarInfoDetail',
   data(){
    return{
+     personInfo:'',
       phone:"1234567",
-      name:"LAN CUIYINGLAN",
+      name:"",
       QQ:"1270967764",
       email:"1370967764@qq.com",
       unil:'学校',
@@ -43,6 +46,38 @@ export default {
    };
 
   },
+  created(){
+    this.deatils()
+  },
+  methods:{
+        deatils(){
+          let personInfo1 = this.$route.query.ID;
+          let name = this.$route.query.NAME
+          this.name = name
+          this.personInfo = personInfo1
+          console.log(this.name)
+          console.log(this.personInfo)
+          // this.$axios.get("http://127.0.0.1:5000/scholar_getDetail",
+          // {
+          //   params:{id:this.personInfo},
+          // }).then((res)=>{
+          //    console.log(res.data)
+          //   this.phone=res.data.data.mobilephone;
+          //   this.name=res.data.data.name;
+          //   this.QQ=res.data.data.qq;
+          //   this.email=res.data.data.email;
+          //   this.unil=res.data.data.current_department;
+          //   this.job=res.data.data.current_job;
+          //   this.award=res.data.data.wishes;
+          //   this.message=res.data.data.signature;
+          //   console.log("获取成功")
+          // }).catch((response)=>{
+          //   console.log(response)
+          //   console.log("获取失败")
+          // })
+        }
+
+  }
 
 }
 </script>
