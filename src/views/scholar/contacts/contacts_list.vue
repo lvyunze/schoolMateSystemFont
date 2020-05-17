@@ -7,11 +7,11 @@
     <!-- 筛选 -->
 
     <van-tabs v-model="activeName" offset-top="40" sticky  @change="onChange">
-      <van-tab title="曾在院学习" name="a">
+      <van-tab title="培训校友" name="a">
         <v-scholar></v-scholar>
       </van-tab>
 
-      <van-tab title="授课老师" name="b" v-model="tealist">
+      <van-tab title="教师校友" name="b" v-model="tealist">
        <!-- <v-teacher></v-teacher> -->
        <van-index-bar id="table1">
          <div v-for="(item,index) in list_data1">
@@ -23,21 +23,12 @@
       </van-tab>
     </van-tabs>
 
-    <!-- 通讯列表 -->
-    <!-- <van-index-bar>
-      <div v-for="(item,index) in scholarContact.personnelList">
-        <van-index-anchor :key="item.id" :index="item.group" />
-        <van-cell v-for="info in item.info" :key="info.id" :title="info.name" />
-      </div>
-    </van-index-bar>-->
   </div>
 </template>
 <script>
 import { mapState } from 'vuex'
 import axios from 'axios'
 import scholar_before from '../contacts/contact_detail/scholar_before'
-//import teacher from '../contacts/contact_detail/teacher'
-// let mapStateobj = mapState([''])
 export default {
   components: {
     'v-scholar': scholar_before,
@@ -66,7 +57,7 @@ export default {
   methods:{
 	  onChange(){
 		  // console.log("我爱编程")
-      axios.get("http://127.0.0.1:5000/teacher_contact_get")
+      axios.get("http://47.115.171.199:5000/teacher_contact_get")
       .then(this.get1)
 	  },
     get1(res){

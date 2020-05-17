@@ -4,10 +4,10 @@
     <van-form @submit="onSubmit">
       <van-field v-model="sex" name="性别" label="性别:" :rules="[{ required: true, message: '请选择性别' }]">
         <template #input>
-          <van-radio-group v-model="radio" direction="horizontal">
+         <!-- <van-radio-group v-model="radio" direction="horizontal">
             <van-radio name="1" checked-color="#07c160">男</van-radio>
             <van-radio name="2" checked-color="#07c160">女</van-radio>
-          </van-radio-group>
+          </van-radio-group> -->
         </template>
         <template #right-icon>
           <van-switch v-model="switchChecked1" size="20" active-color="#07c160" />
@@ -18,11 +18,11 @@
           <van-switch v-model="switchChecked2" size="20" active-color="#07c160" />
         </template>
       </van-field>
-      <van-field readonly clickable name="datetimePicker" :value="date" label="生日:" placeholder="点击选择日期" @click="show = true">
+      <!-- <van-field readonly clickable name="datetimePicker" :value="date" label="生日:" placeholder="点击选择日期" @click="show = true">
         <template #right-icon>
           <van-switch v-model="switchChecked3" size="20" active-color="#07c160" />
         </template>
-      </van-field>
+      </van-field> -->
       <van-calendar v-model="show" color="#07c160" :min-date="minDate" :max-date="maxDate" @confirm="onConfirm" />
       <van-field type="number" v-model="email" name="邮箱" label="邮箱:" placeholder="请填写邮箱" :rules="[{ required: true, message: '请填写邮箱' }]">
         <template #right-icon>
@@ -61,7 +61,7 @@
         </template>
       </van-field>
       <div style="margin: 16px;">
-        <van-button round block type="info" native-type="submit" color="#07c160">
+       <van-button round block type="info" native-type="submit" color="#07c160">
           确认修改
         </van-button>
       </div>
@@ -70,10 +70,14 @@
   </div>
 </template>
 <script>
+  import axios from 'axios'
   export default {
     data() {
       return {
-        name: "吕云泽",
+        wx:'',
+        name1:'',
+        token:'',
+        name: '',
         sex: '',
         nation: '',
         email: '',
@@ -95,7 +99,7 @@
         switchChecked10: true,
         username: '',
         password: '',
-        radio: '1',
+       // radio: '1',
         value: '',
         showPicker: false,
         date: '',
@@ -107,19 +111,87 @@
 
       };
     },
+    created(){
+      //页面加载时就从本地通过localstorage获取存储的token值
+      this.token =  localStorage.getItem('token')
+    },
+    mounted(){
+       axios({
+         method:'get',
+         url:'http://47.115.171.199:5000/scholar_get_self_info',
+         headers:{
+           'Content-Type': "application/json;charset=UTF-8",
+           //把token放到请求头才能请求，这里的'Bearer '表示是后台希望更加的安全，依据后台给的信息看到底是加还是不加
+           'Authorization':this.token
+          }
+       })
+       .then(res=>{
+         console.log(res.data);
+         const data = res.data
+        var aa = Object.values(res.data)
+         this.wx = aa[0].wechat
+         this.name = aa[0].name
+         this.phone = aa[0].mobilephone
+         this.nation = aa[0].nationality
+         this.sex = aa[0].sex
+         this.email = aa[0].email
+         this.QQ = aa[0].qq
+         // this.date = aa[0].birthday
+         this.unit = aa[0].current_department
+         this.job = aa[0].current_job
+         this.honour = aa[0].signature
+         this.message = aa[0].wishes
+        //  console.log(aa);
+        //  console.log(aa[0].wechat);
+        //  console.log(aa[0].wechat);
+        //  console.log(this.wx);
+
+         console.log('获取信息成功');
+       })
+       .catch((response)=>{
+        console.log('失败');
+        console.log(response);
+       })
+    },
+
     methods: {
       onSubmit(values) {
-          // let jsonData = {
-          //   userName:this.name,
-          //   userSex:this.sex,
-          //   userEmail:this.email
-          // };
-          // this.&axios.post("",jsonData).then(res=>{
-          //   console.log('成功提交');
-          // })
+       // m1(){
+        console.log(this.token);
         console.log('你好', values);
-        // console.log('性别', this.sex);
+        axios({
+          method:'post',
+          url:'http://47.115.171.199:5000/scholar_personal_info',
+          headers:{
+            'Content-Type': "application/json;charset=UTF-8",
+            //把token放到请求头才能请求，这里的'Bearer '表示是后台希望更加的安全，依据后台给的信息看到底是加还是不加
+            'Authorization':this.token
+           },
+           data:{
+            wechat:this.wx,
+            name:this.name,
+            sex:this.sex,
+            qq:this.QQ,
+            email:this.email,
+            nationality:this.nation,
+            current_department:this.unit,
+            current_job:this.job,
+            signature:this.honour,
+            wishes:this.message,
+            // birthday:this.date
+           }
+        })
+        .then(res=>{
+          console.log(res.data);
+          console.log('赋值成功');
+        })
+        .catch((response)=>{
+         console.log('失败');
+         console.log(response);
+        })
       },
+
+
       formatDate(date) {
         return `${date.getYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
       },

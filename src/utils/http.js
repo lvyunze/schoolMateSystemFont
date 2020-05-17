@@ -11,7 +11,7 @@ const instance = axios.create({
 if (process.env.NODE_ENV === 'development') {
   // 开发环境设置代理 ==> apis
   // instance.defaults.baseURL = '/apis'
-  instance.defaults.baseURL = 'http://127.0.0.1:5000'
+  instance.defaults.baseURL = 'http://47.115.171.199:5000'
 } else if (process.env.NODE_ENV === 'debug') {
   instance.defaults.baseURL = 'https://www.test.com'
 } else if (process.env.NODE_ENV === 'production') {
