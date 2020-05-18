@@ -7,7 +7,7 @@ const path = require('path')
 module.exports = {
   dev: {
     assetsSubDirectory: 'static',
-    assetsPublicPath: './',
+    assetsPublicPath: '/',  
     proxyTable: {
       '/apis': {
         target: 'http://47.115.171.199:5000',
@@ -61,7 +61,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: './',
 
     /**
      * Source Maps
