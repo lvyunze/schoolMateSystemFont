@@ -14,6 +14,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "all": "0.0.0",
     "axios": "^0.19.2",
     "js-pinyin": "^0.1.9",
     "qs": "^6.9.1",

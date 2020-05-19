@@ -6,10 +6,12 @@ import StRegister from '@/views/staff/StRegister'
 import StAuthentication from '@/views/staff/StAuthentication'
 import StComplete from '@/views/staff/StComplete'
 import StContacts from '@/views/staff/StContacts'
+
 import ScRegister from '@/views/scholar/ScRegister'
 import ScAuthentication from '@/views/scholar/ScAuthentication'
 import ScComplete from '@/views/scholar/ScComplete'
 import ScContacts from '@/views/scholar/ScContacts'
+
 import GRegister from '@/views/graduate/GRegister'
 import GAuthentication from '@/views/graduate/GAuthentication'
 import GComplete from '@/views/graduate/GComplete'
@@ -74,7 +76,6 @@ const routes = [
             component: () =>
               import('@/views/staff/contacts/contact_detail/scholar_before')
           }
-          
         ]
       },
       {
@@ -90,15 +91,15 @@ const routes = [
       title: '通讯录'
     }
   },
-  {
-    path: '/staffInfoDetail',  //这里scholar改成了staff了
-    name: 'staffInfoDetail',
-    component: () =>
-      import('@/views/staff/contacts/contact_detail/infoDetail'),
-    meta: {
-      title: '详细信息'
-    }
-  },
+  // {
+  //   path: '/staffInfoDetail',  //这里scholar改成了staff了
+  //   name: 'staffInfoDetail',
+  //   component: () =>
+  //     import('@/views/staff/contacts/contact_detail/infoDetail'),
+  //   meta: {
+  //     title: '详细信息'
+  //   }
+  // },
   {
     path: '/ScRegister',
     name: 'ScRegister',
@@ -226,7 +227,7 @@ const routes = [
             component: () =>
               import('@/views/graduate/contacts/contact_detail/scholar_before')
           }
-          
+
         ]
       },
       {
