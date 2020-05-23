@@ -20,17 +20,12 @@ if (process.env.NODE_ENV === 'development') {
 
 // 设置请求超时
 instance.defaults.timeout = 10000
-// POST请求头的设置
-// instance.defaults.headers.post['Content-Type'] =
-//   'application/x-www-form-urlencoded;charset=UTF-8'
+
 
 // 请求拦截器
 instance.interceptors.request.use(
   config => {
-    // POST传参序列化
-    // if (config.method === 'post') {
-    //   config.data = Qs.stringify(config.data)
-    // }
+    
     // 若是有做鉴权token , 就给头部带上token
     if (window.localStorage.getItem('token')) {
       config.headers.Authorization = window.localStorage.getItem('token')

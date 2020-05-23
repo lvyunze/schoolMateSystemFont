@@ -111,15 +111,6 @@ export default {
       }
       // 删除临时存放的数据
 
-      // console.log(typeof auth)
-
-      // console.log('--------------')
-      // console.log(obj)
-      // localStorage.setItem('temp', obj)
-      // var x = JSON.parse(localStorage.getItem('temp'))
-
-      // console.log(x)
-      // console.log(this.teacher)
     }
   }
 }

@@ -20,18 +20,16 @@ export default {
     return {
       scholarContact: this.$store.getters.scholarContact
     }
-  // console.log(scholarContact.personnelList)
+
   },
   methods: {
     infoDetail(info) {
       this.$router.push({
         path: '/scholarInfoDetail',
-        // this.$emit('select',info);
+      
          query:{ID:info.id, NAME:info.name}
       })
-    // console.log(info)
-    //  console.log(info.id)
-     // console.log(scholarContact.personnelList)
+   
     }
   }
 }

@@ -20,8 +20,6 @@
       <van-cell :title="award" label="个人荣誉" icon="award" />
       <van-cell :title="message" label="寄语" icon="label" />
 
-      <!-- <van-cell is-link v-for="item in station" :key="item.Id" :id="item.Id" :title="item.Name" @click="onClick"/> -->
-
     </van-field>
     </van-cell-group>
   </div>
@@ -49,9 +47,7 @@ export default {
   created(){
     this.deatils()
   },
-  // mounted(){
-  //   this.deatils()
-  // },
+
 
   methods:{
         deatils(){

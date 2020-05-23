@@ -47,11 +47,7 @@ export default {
       valueOption: 0,
 
       activeName: 'a'
-      // option: [
-      //   { text: '曾在院学习', value: 0 },
-      //   { text: '授课老师', value: 1 }
-      // ],
-      // scholarContact: this.$store.getters.scholarContact
+    
     }
   },
   methods:{
@@ -75,27 +71,9 @@ export default {
         query:{ID:info.id, NAME:info.name}
         // query:{id:info.activeJobId}
       })
-     // console.log(info)
-     // console.log(scholarContact.personnelList)
+   
     }
   }
-  // created() {
-  //   window.addEventListener('beforeunload', () => {
-  //     this.$store.dispatch('scholarContactGet')
-  //   })
-  // },
-  // 因为报错,就把这里注释了
-  // created () {
-  //         this.$api.get('teacherContactGet', null, r => {
-  //             console.log(r)
-  //         })
-  //     }
-  // computed: {
-  //   ...mapState(['scholarContact'])
-  // }
-
-// created() {
-//     this.$store.dispatch('teacherContactGet')
-//   }
+  
 }
 </script>

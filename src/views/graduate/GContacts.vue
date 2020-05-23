@@ -41,13 +41,7 @@ export default {
         path: '/GContacts/personal_set'
       })
     }
-    // getScholarContact() {
-    //   const contact = this.$store.state.scholarContact
-    //   if (!contact) {
-    //     console.log('test')
-    //     this.$store.dispatch('scholarContactGet')
-    //   }
-    // }
+   
   },
   }
 </script>

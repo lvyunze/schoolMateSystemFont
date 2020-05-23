@@ -25,10 +25,6 @@
         <van-field v-model="tel" type="tel" input-align="right" label="手机号" placeholder="请输入手机号" />
       </van-cell-group>
 
-      <!-- <van-cell-group>
-        <van-cell title="入职年" v-model="inDate" @click="InDate()" />
-      </van-cell-group>-->
-      <!-- 入职年 -->
       <van-field
         readonly
         clickable

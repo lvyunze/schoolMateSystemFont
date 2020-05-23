@@ -2,8 +2,6 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import createPersistedState from 'vuex-persistedstate'
 
-// 开发模式下使用日志，和谷歌浏览器里面的vuedevtool插件类似
-// 修改state的时候会在控制台打印一些信息
 import createLogger from 'vuex/dist/logger'
 
 // import api from '../api'
@@ -19,12 +17,7 @@ const createPersisted = createPersistedState({
 })
 
 export default new Vuex.Store({
-  // * Vuex 数据持久化 */
-  // plugins: [
-  //   createPersistedState({
-  //     storage: window.sessionStorage // localStorage or sessionStorage,
-  //   })
-  // ],
+  
   state: {
     userInfo: null,
     scholarGroup: null,

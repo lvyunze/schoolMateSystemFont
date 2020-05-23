@@ -38,8 +38,7 @@
 import { mapState } from 'vuex'
 import axios from 'axios'
 import scholar_before from '../contacts/contact_detail/scholar_before'
-//import teacher from '../contacts/contact_detail/teacher'
-// let mapStateobj = mapState([''])
+
 export default {
   components: {
     'v-scholar': scholar_before,
@@ -94,23 +93,9 @@ export default {
         query:{ID:info.id, NAME:info.name}
         // query:{id:info.activeJobId}
       })
-     // console.log(info)
-     // console.log(scholarContact.personnelList)
+   
     }
   }
 
-  // 因为报错,就把这里注释了
-  // created () {
-  //         this.$api.get('teacherContactGet', null, r => {
-  //             console.log(r)
-  //         })
-  //     }
-  // computed: {
-  //   ...mapState(['scholarContact'])
-  // }
-
-// created() {
-//     this.$store.dispatch('teacherContactGet')
-//   }
 }
 </script>

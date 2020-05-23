@@ -243,14 +243,7 @@ const routes = [
       title: '通讯录'
     }
   }
-  // {
-  //   path: '/GComplete/:pid',
-  //   name: 'GComplete',
-  //   component: GComplete,
-  //   meta: {
-  //     title: '详情页'
-  //   }
-  // }
+ 
 ]
 
 const router = new VueRouter({

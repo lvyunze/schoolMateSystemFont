@@ -31,24 +31,5 @@
   </div>
 </template>
 <script>
-export default {
-  //在data中将要用到的数据给一个初始值，为空
-  data(){
-    return{
 
-    }
-  },
-  // mounted: function () {
-  //         // GET /someUrl
-  //         this.$http.get('127.0.0.1:5000/teacher_contact_get').then(response => {
-  //              console.log(response.data);
-  //             // get body data
-  //             // this.someData = response.body;
-
-  //         }, response => {
-  //             console.log("error");
-  //         });
-  //     },
-
-}
 </script>

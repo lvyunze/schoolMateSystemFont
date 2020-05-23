@@ -233,9 +233,6 @@ export default {
         path: '/GAuthentication'
       })
 
-      // var x = JSON.parse(localStorage.getItem('temp'))
-      // alert(x)
-      // console.log(x)
     }
   }
 }

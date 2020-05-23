@@ -37,8 +37,7 @@
 import { mapState } from 'vuex'
 import axios from 'axios'
 import scholar_before from '../contacts/contact_detail/scholar_before'
-//import teacher from '../contacts/contact_detail/teacher'
-// let mapStateobj = mapState([''])
+
 export default {
   components: {
     'v-scholar': scholar_before,
@@ -93,10 +92,9 @@ export default {
       this.$router.push({
         path: '/scholarInfoDetail',
         query:{ID:info.id, NAME:info.name}
-        // query:{id:info.activeJobId}
+      
       })
-     // console.log(info)
-     // console.log(scholarContact.personnelList)
+     
     },
 
 }
