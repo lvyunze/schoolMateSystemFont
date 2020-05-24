@@ -4,7 +4,8 @@
       <p class="select_identity">请选择您的身份</p>
     </div>
     <div class="all_type">
-      <router-link class="typePersonnel" to="/StRegister">
+
+		 <router-link class="typePersonnel" to="/" @click.native="Stclick()">
         <div class="weui-cell__bd">
           <p style="text-align:center">曾在院工作过</p>
           <div class="weui-cell__ft"></div>
@@ -12,7 +13,7 @@
         </div>
       </router-link>
 
-      <router-link class="typePersonnel" to="/GRegister">
+      <router-link class="typePersonnel" to="/" @click.native="Gclick()">
         <div class="weui-cell__bd">
           <p style="text-align:center">曾是在院学生</p>
           <div class="weui-cell__ft"></div>
@@ -20,7 +21,7 @@
         </div>
       </router-link>
 
-      <router-link class="typePersonnel" to="/ScRegister">
+      <router-link class="typePersonnel" to="/" @click.native="SCclick()">
         <div class="weui-cell__bd">
           <p style="text-align:center">曾在院参加培训</p>
           <div class="weui-cell__ft"></div>
@@ -77,7 +78,36 @@ export default {
       if (data.status === 200) {
         window.location.href = data.url
       }
-    }
+    },
+    Stclick(){
+       if("vuex" in sessionStorage && "temp" in localStorage){
+         this.$router.push('/StComplete')
+         console.log("已经注册")
+       }else{
+         this.$router.push('/StRegister')
+         console.log("没有注册,准备注册")
+       }
+    },
+    Gclick(){
+       if("vuex" in sessionStorage && "temp" in localStorage){
+         this.$router.push('/GComplete')
+         console.log("已经注册")
+       }else{
+         this.$router.push('/GRegister')
+         console.log("没有注册,准备注册")
+       }
+    },
+    SCclick(){
+       if("vuex" in sessionStorage && "temp" in localStorage){
+         this.$router.push('/ScComplete')
+         console.log("已经注册")
+       }else{
+         this.$router.push('/ScRegister')
+         console.log("没有注册,准备注册")
+       }
+    },
+    
+
   }
 }
 </script>

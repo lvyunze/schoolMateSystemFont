@@ -15,7 +15,7 @@
        <van-index-bar id="table1">
          <div v-for="(item,index) in list_data1">
            <van-index-anchor :key="item.id" :index="item.group" />
-           <van-cell v-for="info in item.info" :key="info.id" @click="infoDetail(info)" :title="info.name" />
+           <van-cell v-for="info in item.info" :key="info.id" @click="infoDetail1(info)" :title="info.name" />
          </div>
        </van-index-bar>
       </van-tab>
@@ -24,7 +24,7 @@
 	     <van-index-bar id="table2">
 	       <div v-for="(item,index) in list_data2">
 	         <van-index-anchor :key="item.id" :index="item.group" />
-	         <van-cell v-for="info in item.info" :key="info.id" @click="infoDetail(info)" :title="info.name" />
+	         <van-cell v-for="info in item.info" :key="info.id" @click="infoDetail2(info)" :title="info.name" />
 	       </div>
 	     </van-index-bar>
 	  </van-tab>
@@ -88,13 +88,17 @@ export default {
     mounted(){
       this.onChange()
     },
-    infoDetail(info) {
+    infoDetail1(info) {
       this.$router.push({
-        path: '/scholarInfoDetail',
-        query:{ID:info.id, NAME:info.name}
-      
-      })
-     
+        path: '/scholarInfoDetail1',
+        query:{ID:info.id, NAME:info.name}      
+      })    
+    },
+    infoDetail2(info) {
+      this.$router.push({
+        path: '/scholarInfoDetail2',
+        query:{ID:info.id, NAME:info.name}      
+      })    
     },
 
 }

@@ -47,7 +47,7 @@ export default {
       valueOption: 0,
 
       activeName: 'a'
-    
+
     }
   },
   methods:{
@@ -64,16 +64,19 @@ export default {
     },
     mounted(){
       this.onChange()
+       console.log("成功拉")
+       
+
     },
     infoDetail(info) {
       this.$router.push({
-        path: '/scholarInfoDetail',
+        path: '/scholarInfoDetail1',
         query:{ID:info.id, NAME:info.name}
         // query:{id:info.activeJobId}
       })
-   
+
     }
   }
-  
+
 }
 </script>

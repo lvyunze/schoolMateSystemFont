@@ -17,7 +17,7 @@
       <van-cell :title="email" label="邮箱号" icon="graphic" />
       <van-cell :title="unil" label="现工作单位" icon="wap-home" />
       <van-cell :title="job" label="现任职务" icon="manager" />
-      <van-cell :title="award" label="个人荣誉" icon="award" />
+      <van-cell :title="award" label="个人祝愿" icon="award" />
       <van-cell :title="message" label="寄语" icon="label" />
 
     </van-field>
@@ -32,14 +32,14 @@ export default {
   data(){
    return{
      personInfo:'',
-      phone:"13692164873",
+      phone:"",
       name:"",
-      QQ:"1270967764",
-      email:"123@qq.com",
-      unil:'学校',
-      job:"教师",
-      award:"人活着不是为了吃饭",
-      message:"人不吃饭是为了活着"
+      QQ:"",
+      email:"",
+      unil:'',
+      job:"",
+      award:"",
+      message:""
 
    };
 
@@ -65,14 +65,14 @@ export default {
           }).then((res)=>{
              console.log(res.data)
 			  var aa = Object.values(res.data)
-			  //this.phone = aa[0].mobilephone
-            // this.QQ=aa[0].qq;
-            // this.email=aa[0].email;
-            // this.unil=aa[0].current_department;
-            // this.job=aa[0].current_job;
-            // this.award=aa[0].wishes;
-            // this.message=aa[0].signature;
-            console.log("获取成功")
+			  this.phone = aa[0].mobilephone
+        this.QQ=aa[0].qq;
+        this.email=aa[0].email;
+        this.unil=aa[0].current_department;
+        this.job=aa[0].current_job;
+        this.award=aa[0].wishes;
+        this.message=aa[0].signature;
+            console.log("获取详情信息成功")
           }).catch((response)=>{
             console.log(response)
             console.log("获取失败")

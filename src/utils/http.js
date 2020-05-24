@@ -12,11 +12,17 @@ if (process.env.NODE_ENV === 'development') {
   // 开发环境设置代理 ==> apis
   // instance.defaults.baseURL = '/apis'
   instance.defaults.baseURL = 'http://47.115.171.199:5000'
-} else if (process.env.NODE_ENV === 'debug') {
-  instance.defaults.baseURL = 'https://www.test.com'
-} else if (process.env.NODE_ENV === 'production') {
-  instance.defaults.baseURL = 'https://www.production.com'
-}
+  } else if (process.env.NODE_ENV === 'debug') {
+    instance.defaults.baseURL = 'http://47.115.171.199:5000'
+  } else if (process.env.NODE_ENV === 'production') {
+    instance.defaults.baseURL = 'http://47.115.171.199:5000'
+  }
+//   instance.defaults.baseURL = 'http://127.0.0.1:5000'
+// } else if (process.env.NODE_ENV === 'debug') {
+//   instance.defaults.baseURL = 'https://www.test.com'
+// } else if (process.env.NODE_ENV === 'production') {
+//   instance.defaults.baseURL = 'https://www.production.com'
+// }
 
 // 设置请求超时
 instance.defaults.timeout = 10000
@@ -25,7 +31,7 @@ instance.defaults.timeout = 10000
 // 请求拦截器
 instance.interceptors.request.use(
   config => {
-    
+
     // 若是有做鉴权token , 就给头部带上token
     if (window.localStorage.getItem('token')) {
       config.headers.Authorization = window.localStorage.getItem('token')

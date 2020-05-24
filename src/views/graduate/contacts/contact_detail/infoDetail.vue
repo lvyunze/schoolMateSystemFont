@@ -32,14 +32,14 @@ export default {
   data(){
    return{
      personInfo:'',
-      phone:"1234567",
+      phone:"",
       name:"",
-      QQ:"1270967764",
-      email:"1370967764@qq.com",
-      unil:'学校',
-      job:"教师",
-      award:"计算机等级合格证书、英语四级、教师资格证、托福、雅思、研究生博士生",
-      message:"人吃饭是为了活着，但活着不是为了吃饭"
+      QQ:"",
+      email:"",
+      unil:'',
+      job:"",
+      award:"",
+      message:""
 
    };
 

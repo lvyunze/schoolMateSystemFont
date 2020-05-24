@@ -24,7 +24,7 @@
         </template>
       </van-field> -->
       <van-calendar v-model="show" color="#07c160" :min-date="minDate" :max-date="maxDate" @confirm="onConfirm" />
-      <van-field type="number" v-model="email" name="邮箱" label="邮箱:" placeholder="请填写邮箱" :rules="[{ required: true, message: '请填写邮箱' }]">
+      <van-field type="email" v-model="email" name="邮箱" label="邮箱:" placeholder="请填写邮箱" :rules="[{ required: true, message: '请填写邮箱' }]">
         <template #right-icon>
           <van-switch v-model="switchChecked4" size="20" active-color="#07c160" />
         </template>
@@ -184,6 +184,13 @@
         .then(res=>{
           console.log(res.data);
           console.log('赋值成功');
+		  this.$dialog
+		    .alert({
+		      message: '更改成功' //改变弹出框的内容
+		    })
+		    .then(() => {
+		      //点击确认按钮后的调用
+		    })
         })
         .catch((response)=>{
          console.log('失败');

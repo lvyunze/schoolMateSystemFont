@@ -27,6 +27,7 @@ const routes = [
       title: '身份选择'
     }
   },
+ 
   // 曾在院工作填写基本信息页面
   {
     path: '/StRegister',
@@ -177,7 +178,27 @@ const routes = [
     component: () =>
       import('@/views/scholar/contacts/contact_detail/infoDetail'),
     meta: {
-      title: '详细信息'
+      title: '校友详细信息'
+    }
+  },
+  {
+    path: '/scholarInfoDetail1',
+    name: 'scholarInfoDetail1',
+    component: () =>
+      import('@/views/scholar/contacts/contact_detail/infoDetail1'),
+    meta: {
+      title: '老师详细信息',
+       // title: '老师详细信息1'
+    }
+  },
+  {
+    path: '/scholarInfoDetail2',
+    name: 'scholarInfoDetail2',
+    component: () =>
+      import('@/views/staff/contacts/contact_detail/infoDetail2'),
+    meta: {
+      title: '详细信息',
+       // title: '毕业生详细信息2'
     }
   },
   {
@@ -243,7 +264,7 @@ const routes = [
       title: '通讯录'
     }
   }
- 
+
 ]
 
 const router = new VueRouter({
@@ -267,7 +288,8 @@ router.beforeEach((to, from, next) => {
     store.dispatch('getUserInfo').catch(err => {
       console.log(err)
       window.localStorage.removeItem('token')
-      router.go(0)
+	  //router.go当val为0时刷新当前页面
+       router.go(0)
     })
     next()
   } else {
